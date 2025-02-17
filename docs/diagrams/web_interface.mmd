@@ -1,0 +1,63 @@
+graph TB
+    subgraph Layout["Web Interface Layout"]
+        direction TB
+        
+        subgraph Top["Top Section"]
+            direction LR
+            KG[Knowledge Graph View]
+            Metrics[Learning Metrics]
+            KG --- Metrics
+        end
+        
+        subgraph Middle["Middle Section"]
+            direction LR
+            Code[Code Explorer]
+            Details[Pattern Details]
+            Code --- Details
+        end
+        
+        subgraph Bottom["Bottom Section"]
+            direction LR
+            Chat[Chat Input]
+            History[Chat History]
+            Chat --- History
+        end
+        
+        Top --> Middle
+        Middle --> Bottom
+    end
+    
+    subgraph DataFlow["Data Flow"]
+        direction LR
+        Input[User Input] --> Process[Research Process]
+        Process --> Store[Knowledge Store]
+        Store --> Update[UI Updates]
+        Update --> Refresh[Real-time Refresh]
+    end
+    
+    subgraph Interactions["User Interactions"]
+        direction TB
+        Click[Graph Click] --> ShowDetails[Show Details]
+        Type[Chat Input] --> Research[Trigger Research]
+        Select[Code Select] --> Analyze[Show Analysis]
+    end
+    
+    subgraph Updates["UI Updates"]
+        direction TB
+        NewNode[New Knowledge] --> UpdateGraph[Update Graph]
+        NewMetric[New Metrics] --> UpdateCharts[Update Charts]
+        NewCode[New Code] --> UpdateExplorer[Update Explorer]
+    end
+
+    style Layout fill:#f9f9f9,stroke:#333,stroke-width:2px
+    style DataFlow fill:#e6f3ff,stroke:#333,stroke-width:2px
+    style Interactions fill:#f0fff0,stroke:#333,stroke-width:2px
+    style Updates fill:#fff0f0,stroke:#333,stroke-width:2px
+    
+    style KG fill:#bbdefb,stroke:#1976d2,stroke-width:2px
+    style Chat fill:#c8e6c9,stroke:#388e3c,stroke-width:2px
+    style Code fill:#ffecb3,stroke:#ffa000,stroke-width:2px
+    
+    style Process fill:#e1bee7,stroke:#7b1fa2,stroke-width:2px
+    style Store fill:#b2dfdb,stroke:#00796b,stroke-width:2px
+    style Update fill:#ffccbc,stroke:#e64a19,stroke-width:2px

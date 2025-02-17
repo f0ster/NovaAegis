@@ -1,0 +1,121 @@
+{
+  "extract_concepts": {
+    "template": "Extract key concepts from the following text.\nConsider domain: {domain}\n\nText: {text}\n\nIdentify:\n1. Core concepts and their relationships\n2. Domain-specific terminology\n3. Underlying patterns and principles\n\nFormat response as JSON with:\n- name: concept name\n- importance: float 0-1\n- domain: optional domain classification\n- relationships: list of related concepts\n- confidence: float 0-1",
+    "examples": [
+      {
+        "input": "Async/await makes handling asynchronous operations more readable",
+        "output": {
+          "concepts": [
+            {
+              "name": "async/await",
+              "importance": 0.9,
+              "domain": "programming",
+              "relationships": ["promises", "asynchronous programming"],
+              "confidence": 0.95
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "extract_constraints": {
+    "template": "Extract constraints and requirements from the following text.\n\nText: {text}\n\nIdentify:\n1. Time constraints\n2. Resource limitations\n3. Technical requirements\n4. Quality expectations\n\nFormat response as JSON with:\n- type: constraint type\n- description: detailed description\n- severity: float 0-1\n- flexibility: float 0-1",
+    "examples": [
+      {
+        "input": "Need daily updates with low latency processing",
+        "output": {
+          "constraints": [
+            {
+              "type": "time",
+              "description": "Daily update frequency required",
+              "severity": 0.8,
+              "flexibility": 0.3
+            },
+            {
+              "type": "performance",
+              "description": "Low latency processing required",
+              "severity": 0.7,
+              "flexibility": 0.4
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "extract_preferences": {
+    "template": "Extract user preferences and priorities from the following text.\n\nText: {text}\n\nIdentify:\n1. Format preferences\n2. Style preferences\n3. Priority areas\n4. Quality requirements\n\nFormat response as JSON with:\n- type: preference type\n- value: preferred value\n- importance: float 0-1\n- flexibility: float 0-1",
+    "examples": [
+      {
+        "input": "Focus on practical examples with visual explanations",
+        "output": {
+          "preferences": [
+            {
+              "type": "content",
+              "value": "practical examples",
+              "importance": 0.9,
+              "flexibility": 0.4
+            },
+            {
+              "type": "format",
+              "value": "visual explanations",
+              "importance": 0.8,
+              "flexibility": 0.5
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "extract_information": {
+    "template": "Extract key information from the following text.\nMinimum confidence: {min_confidence}\n\nText: {text}\n\nExtract:\n1. Core facts and findings\n2. Supporting evidence\n3. Related context\n4. Confidence levels\n\nFormat response as JSON with:\n- fact: extracted information\n- evidence: supporting evidence\n- confidence: float 0-1\n- context: related information",
+    "examples": [
+      {
+        "input": "Studies show that code reviews reduce defects by 60%",
+        "output": {
+          "information": [
+            {
+              "fact": "Code reviews reduce defects",
+              "evidence": "60% reduction rate in studies",
+              "confidence": 0.85,
+              "context": "Software quality assurance"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "generate_insights": {
+    "template": "Generate insights from the following research context.\n\nContext: {context}\n\nGenerate:\n1. Key findings\n2. Pattern recognition\n3. Novel connections\n4. Practical implications\n\nFormat response as JSON with:\n- description: insight description\n- pattern_type: type of pattern\n- confidence: float 0-1\n- implications: practical applications",
+    "examples": [
+      {
+        "input": "Context about microservices and testing",
+        "output": {
+          "insights": [
+            {
+              "description": "Integration testing complexity increases exponentially with service count",
+              "pattern_type": "scaling_challenge",
+              "confidence": 0.85,
+              "implications": ["Need for service virtualization", "Test environment management"]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "synthesize_findings": {
+    "template": "Synthesize research findings into a coherent analysis.\n\nContext: {context}\n\nProvide:\n1. Executive summary\n2. Key patterns\n3. Recommendations\n4. Future implications\n\nFormat response as JSON with:\n- summary: high-level overview\n- patterns: list of patterns\n- recommendations: actionable items\n- future_impact: long-term implications",
+    "examples": [
+      {
+        "input": "Findings about deployment practices",
+        "output": {
+          "synthesis": {
+            "summary": "Continuous deployment shows clear benefits",
+            "patterns": ["Reduced deployment risk", "Faster feedback cycles"],
+            "recommendations": ["Implement feature flags", "Automate rollbacks"],
+            "future_impact": "Enables rapid experimentation and learning"
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+graph TB
+    subgraph Input["Input Processing"]
+        Query[User Query]
+        Raw[Raw Results]
+        Concepts[Extracted Concepts]
+    end
+
+    subgraph Analysis["Analysis Layer"]
+        Pattern[Pattern Recognition]
+        Validation[Result Validation]
+        Metrics[Quality Metrics]
+    end
+
+    subgraph Learning["Learning System"]
+        Confidence[Confidence Scoring]
+        Tuning[Parameter Tuning]
+        Feedback[Feedback Loop]
+    end
+
+    subgraph Knowledge["Knowledge Base"]
+        Graph[Knowledge Graph]
+        Relations[Relationships]
+        Weights[Edge Weights]
+    end
+
+    Query --> Raw
+    Raw --> Concepts
+    Concepts --> Pattern
+    Pattern --> Validation
+    Validation --> Metrics
+    Metrics --> Confidence
+    Confidence --> Tuning
+    Tuning --> Feedback
+    Feedback --> Graph
+    Graph --> Relations
+    Relations --> Weights
+    Weights --> Pattern
+
+    style Query fill:#f9f,stroke:#333,stroke-width:2px
+    style Graph fill:#bfb,stroke:#333,stroke-width:2px
+    style Feedback fill:#fbf,stroke:#333,stroke-width:2px
+    style Tuning fill:#bbf,stroke:#333,stroke-width:2px

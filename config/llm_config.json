@@ -1,0 +1,35 @@
+{
+  "model_type": "Local",
+  "local": {
+    "model": "llama2-7b",
+    "path": "models/llama2-7b",
+    "quantization": "4bit",
+    "context_length": 4096
+  },
+  "remote": {
+    "url": "",
+    "api_key": "",
+    "organization": ""
+  },
+  "parameters": {
+    "temperature": 0.7,
+    "max_tokens": 2000,
+    "top_p": 0.9,
+    "frequency_penalty": 0.0,
+    "presence_penalty": 0.0,
+    "stop_sequences": []
+  },
+  "system_config": {
+    "max_concurrent_requests": 5,
+    "request_timeout": 30,
+    "retry_attempts": 3,
+    "cache_enabled": true,
+    "cache_ttl": 3600
+  },
+  "monitoring": {
+    "log_level": "INFO",
+    "track_metrics": true,
+    "track_tokens": true,
+    "track_latency": true
+  }
+}

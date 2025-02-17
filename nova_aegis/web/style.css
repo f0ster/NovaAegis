@@ -1,0 +1,273 @@
+/* Styles for NovaAegis's interface */
+
+/* Main container */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Header */
+h1 {
+    font-family: 'Inter', system-ui, sans-serif;
+    color: #2d3748;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+/* Chat interface */
+.chatbot {
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    height: 500px;
+    overflow-y: auto;
+}
+
+.chat-message {
+    padding: 1rem;
+    margin: 0.5rem;
+    border-radius: 8px;
+}
+
+.user-message {
+    background: #f7fafc;
+    margin-left: 2rem;
+}
+
+.assistant-message {
+    background: #ebf4ff;
+    margin-right: 2rem;
+}
+
+/* Input area */
+.input-container {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 1rem;
+    margin-top: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+textarea {
+    font-family: 'Inter', system-ui, sans-serif;
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    width: 100%;
+    resize: none;
+    transition: border-color 0.2s ease;
+}
+
+textarea:focus {
+    border-color: #4299e1;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
+}
+
+/* Buttons */
+button {
+    font-family: 'Inter', system-ui, sans-serif;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+button.primary {
+    background-color: #4299e1;
+    color: white;
+}
+
+button.secondary {
+    background-color: #edf2f7;
+    color: #2d3748;
+}
+
+button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Knowledge visualization */
+.graph-container {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 1rem;
+    height: 500px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.graph-node {
+    fill: #4299e1;
+    transition: all 0.2s ease;
+}
+
+.graph-node:hover {
+    fill: #2b6cb0;
+    cursor: pointer;
+}
+
+.graph-edge {
+    stroke: #a0aec0;
+    stroke-width: 1;
+}
+
+/* Insights panel */
+.insights-container {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.insight-card {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    background: #f7fafc;
+    border-left: 4px solid #4299e1;
+}
+
+.insight-confidence {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    background: #ebf8ff;
+    color: #2b6cb0;
+}
+
+/* Visual journey */
+.journey-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.journey-item {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+}
+
+.journey-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.journey-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.journey-caption {
+    padding: 0.75rem;
+    background: #ffffff;
+    font-size: 0.875rem;
+    color: #4a5568;
+}
+
+/* Tabs */
+.tab-nav {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    background: #f7fafc;
+    border-radius: 8px 8px 0 0;
+}
+
+.tab-button {
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    border: none;
+    background: transparent;
+    color: #4a5568;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.tab-button.selected {
+    background: #4299e1;
+    color: white;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease-in;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #1a202c;
+        color: #e2e8f0;
+    }
+    
+    .container {
+        background: #2d3748;
+    }
+    
+    h1 {
+        color: #e2e8f0;
+    }
+    
+    .chatbot,
+    .input-container,
+    .graph-container,
+    .insights-container {
+        background: #2d3748;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+    
+    .user-message {
+        background: #2d3748;
+    }
+    
+    .assistant-message {
+        background: #2c5282;
+    }
+    
+    textarea {
+        background: #2d3748;
+        border-color: #4a5568;
+        color: #e2e8f0;
+    }
+    
+    button.secondary {
+        background: #4a5568;
+        color: #e2e8f0;
+    }
+    
+    .insight-card {
+        background: #2d3748;
+        border-left-color: #4299e1;
+    }
+    
+    .journey-caption {
+        background: #2d3748;
+        color: #e2e8f0;
+    }
+    
+    .tab-nav {
+        background: #2d3748;
+    }
+    
+    .tab-button {
+        color: #e2e8f0;
+    }
+}

@@ -1,0 +1,65 @@
+{
+  "current_values": {
+    "base_confidence": 0.6,
+    "relevance_threshold": 0.5,
+    "knowledge_weight": 0.7,
+    "exploration_rate": 0.2
+  },
+  "history": [],
+  "feedback_history": [],
+  "optimization_metrics": {
+    "avg_quality": 0.0,
+    "avg_relevance": 0.0,
+    "feedback_count": 0
+  },
+  "domain_parameters": {
+    "python": {
+      "base_confidence": 0.65,
+      "relevance_threshold": 0.55
+    },
+    "javascript": {
+      "base_confidence": 0.62,
+      "relevance_threshold": 0.52
+    },
+    "devops": {
+      "base_confidence": 0.58,
+      "relevance_threshold": 0.48
+    }
+  },
+  "parameter_configs": {
+    "base_confidence": {
+      "min_value": 0.1,
+      "max_value": 1.0,
+      "step_size": 0.05,
+      "description": "Base confidence threshold for accepting results"
+    },
+    "relevance_threshold": {
+      "min_value": 0.3,
+      "max_value": 0.9,
+      "step_size": 0.05,
+      "description": "Minimum relevance score for results"
+    },
+    "knowledge_weight": {
+      "min_value": 0.1,
+      "max_value": 2.0,
+      "step_size": 0.1,
+      "description": "Weight given to existing knowledge"
+    },
+    "exploration_rate": {
+      "min_value": 0.0,
+      "max_value": 0.5,
+      "step_size": 0.05,
+      "description": "Rate of exploring new patterns"
+    }
+  },
+  "learning_rates": {
+    "quality_factor": 0.1,
+    "relevance_factor": 0.15,
+    "exploration_factor": 0.05
+  },
+  "optimization_config": {
+    "min_feedback_count": 5,
+    "update_interval": 10,
+    "max_adjustment_per_step": 0.1
+  }
+}
